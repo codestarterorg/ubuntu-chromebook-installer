@@ -2,19 +2,21 @@
 # settings. The 'x' that prefixes the script name ensures that this is the last
 # device script to be run.
 
+# ENVIRONMENT VARIABLES
 # Create a temp directory for our work
 tempbuild=`mktemp -d`
+export DEBIAN_FRONTEND=noninteractive
 
 echo "Installing Chrome"
 cd $tempbuild
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
-export DEBIAN_FRONTEND=noninteractive; apt-get -f -y -q install
+apt-get -f -y -q install
 touch "chrome.done"
 
 echo "Installing Scratch"
 cd $tempbuild
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install scratch
+apt-get -y -q install scratch
 touch "scratch.done"
 
 echo "Installing Sublime Text 3"
@@ -25,12 +27,12 @@ touch "sublime.done"
 
 echo "Installing Vim"
 cd $tempbuild
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install vim
+apt-get -y -q install vim
 touch "vim.done"
 
 echo "Installing Emacs"
 cd $tempbuild
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install emacs
+apt-get -y -q install emacs
 touch "emacs.done"
 
 echo "Installing ruby-install"
@@ -62,24 +64,24 @@ touch "chruby.done"
 
 echo "Installing node.js & npm"
 cd $tempbuild
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install nodejs npm
+apt-get -y -q install nodejs npm
 touch "nodejs.done"
 
 echo "Installing Java"
 cd $tempbuild
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install default-jdk
+apt-get -y -q install default-jdk
 touch "java.done"
 
 echo "Installing Minecraft"
 cd $tempbuild
-export DEBIAN_FRONTEND=noninteractive; add-apt-repository -y ppa:minecraft-installer-peeps/minecraft-installer
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q update
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install minecraft-installer
+add-apt-repository -y ppa:minecraft-installer-peeps/minecraft-installer
+apt-get -y -q update
+apt-get -y -q install minecraft-installer
 touch "minecraft.done"
 
 echo "Installing Git"
 cd $tempbuild
-export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install git
+apt-get -y -q install git
 touch "git.done"
 
 echo "Installing wallpaper"
