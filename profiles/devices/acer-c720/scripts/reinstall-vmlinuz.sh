@@ -28,7 +28,7 @@ if m:
     print int1+c1+int2+c2+int3+signed_int1+c3+word1
 END
 )
-mykernver=$(echo $mykern | cut -d'-' -f 1-2)
+mykernver="$(echo ${mykern} | cut -d'-' -f 1-2)"
 
 echo "Installing latest kernel packages"
 sudo apt-get install -y linux-generic linux-signed-generic

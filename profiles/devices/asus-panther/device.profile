@@ -25,7 +25,7 @@ kernel_url_pkgs="http://us.archive.ubuntu.com/ubuntu/ubuntu/ubuntu/pool/main/l/l
 #additional_ppa=""
 
 #Add packages from an URL (Not available yet)
-#url_pkgs="$kernel_url_pkgs"
+#url_pkgs="${kernel_url_pkgs}"
 
 #Add packages from a PPA
 ppa_pkgs="xserver-xorg-lts-raring xbindkeys xdotool xbacklight"
