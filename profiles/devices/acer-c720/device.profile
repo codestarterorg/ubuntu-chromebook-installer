@@ -25,7 +25,7 @@ swap_file_size="2G"
 #additional_ppa=""
 
 #Add packages from an URL (Not available yet)
-#url_pkgs="$kernel_url_pkgs"
+#url_pkgs="${kernel_url_pkgs}"
 
 #Add packages from a PPA
 ppa_pkgs="xserver-xorg-core xbindkeys xdotool xbacklight"
