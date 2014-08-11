@@ -70,6 +70,14 @@ cd $tempbuild
 export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install default-jdk
 touch "java.done"
 
+# Install perlbrew, for easy installation of a non system perl
+# See what is http://perlbrew.pl/ for further info
+
+echo "Installing perlbrew"
+cd $tempbuild
+export DEBIAN_FRONTEND=noninteractive; apt-get -y -q install perlbrew
+touch "perlbrew.done"
+
 echo "Installing Minecraft"
 cd $tempbuild
 export DEBIAN_FRONTEND=noninteractive; add-apt-repository -y ppa:minecraft-installer-peeps/minecraft-installer
