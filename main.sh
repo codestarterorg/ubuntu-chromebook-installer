@@ -99,7 +99,7 @@ log_msg(){
         msg="$2"
         log_format="$(date +%Y-%m-%dT%H:%M:%S) $debug_level $msg"
         echo "$log_format" >> "$log_dir/$log_file"
-        if [ "$debug_level" != "COMMAND" ];then
+        if [ "$debug_level" != "COMMAND" ] || [ "$verbose" == "1" ];then
           debug_msg "$debug_level" "$msg"
         fi
     else
