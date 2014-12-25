@@ -99,7 +99,7 @@ log_msg(){
         msg="$2"
         log_format="$(date +%Y-%m-%dT%H:%M:%S) $debug_level $msg"
         echo "$log_format" >> "$log_dir/$log_file"
-        if [ "$debug_level" != "COMMAND" ];then
+        if [ "$debug_level" != "COMMAND" ] || [ "$verbose" == "1" ];then
           debug_msg "$debug_level" "$msg"
         fi
     else
@@ -130,7 +130,7 @@ run_command_chroot(){
 #Required arguments
 
 #Optional arguments
-while getopts "hvk" option; do
+while getopts "hv" option; do
     case $option in
         h)
             usage
@@ -146,8 +146,8 @@ while getopts "hvk" option; do
     esac
 done
 
-device_model="${BASH_ARGV[0]}"
-device_search="${BASH_ARGV[1]}"
+device_model="${@:$OPTIND:1}"
+device_search="${@:$OPTIND+1:1}"
 
 # Default to "acer-720" if no other args are sent
 if [ "$device_model" == "" ] && [ "$device_search" = "" ];then
