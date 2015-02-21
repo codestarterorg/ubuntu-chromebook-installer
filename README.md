@@ -37,7 +37,8 @@ Usage
 5. From the shell go to the location of the script on the removable media `cd /media/removable/` and press **[TAB] [TAB]** on your keyboard to show and auto-complete your removable media path automatically
 6. Run the script with `sudo bash main.sh`
 7. On the first run you will be asked how much storage space you want to dedicate to Ubuntu. We suggest choosing the default.
-8. After the first run, your system will reboot to complete the initial formatting, then you will need to re-run the script (steps 3-6) to complete the installation process
+8. After the first run, your system will reboot to complete the initial formatting.  (NOTICE: You must remove your removeable media before reboot).
+9. Reinsert the media and re-run the script (steps 3-6) to complete the installation process
 9. Follow the prompt to complete the installation
 10. After the installation is completed and the Chromebook has rebooted, press CTRL+L to boot into Ubuntu
 11. On first boot you will be asked to complete your system configuration (Language, Time zone, Computer name) and create a user account
