@@ -44,9 +44,9 @@ Usage
 1. As soon as you see the ChromeOS boot screen, hit **esc + refresh + power**
    (all three buttons are on the top row of keys; refresh is the 4th button from
    the left). Laptop will reboot.
-1. You will see a scary white screen. Hit **ctrl-d**.
+1. You will see a scary white screen. Hit **ctrl + d**.
 1. The text on the screen will change. Hit **enter**. Laptop will reboot.
-1. Hit **ctrl-d** again. It will now transition to developer mode, which takes
+1. Hit **ctrl + d** again. It will now transition to developer mode, which takes
    about a minute. When done, it will reboot.
 1. On boot, your laptop will now always show a scary white screen that says
    "OS verification is OFF". Hit **ctrl + d** to boot to ChromeOS (or wait 30
