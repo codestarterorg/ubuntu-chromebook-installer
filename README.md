@@ -5,11 +5,12 @@ This script will install everything necessary to transform an Acer C720 into a
 Codestarter laptop. Primarily this involves partitioning the built-in SSD and
 installing Ubuntu along with various patches and Codestarter customizations.
 
-Upon completion, you will be able to boot into both ChromeOS (CTRL-D) or Ubuntu
-(CTRL-L) from the developer mode boot screen.
+Upon completion, you will be able to boot into both ChromeOS (**ctrl + d**) or
+Ubuntu (**ctrl + l**) from the developer mode boot screen.
 
 For more back story on why we chose the Acer C720 and some of the Codestarter
-customizations, see our blog post at http://bit.ly/X24d9r.
+customizations, see our blog post at
+[http://blog.codestarter.org/how-we-turn-199-chromebooks-into-ubuntu-based/](http://blog.codestarter.org/how-we-turn-199-chromebooks-into-ubuntu-based/).
 
 Supported device(s)
 -------------------
@@ -19,28 +20,111 @@ Supported device(s)
 Prerequisites
 -------------
 
-* A Chromebook listed in the supported device(s) section
-* A recovery image for your Chromebook in case something goes wrong. In order to achieve that, go to [chrome://imageburner](chrome://imageburner), on your Chromebook, and follow the instructions
-* Chromebook in developer mode
-* An external media of at least 1GB (USB Flash drive or SD Card)
-* Patience
+* A Chromebook listed in the supported device(s) section.
+* A recovery image for your Chromebook in case something goes wrong. In order to
+  achieve that, go to [chrome://imageburner](chrome://imageburner), on your
+  Chromebook, and follow the instructions.
+* An external media of at least 1GB (USB Flash drive or SD Card).
+* Patience.
 
 Usage
 -----
 
 **ATTENTION: This will wipe everything on your device**
 
-1. Enable [developer mode](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook).
-2. Download the [latest version of this installer](https://github.com/codestarterorg/ubuntu-chromebook-installer/archive/master.zip) and extract it to a removable media
-3. Boot into ChromeOS, connect to a wireless network and log in as guest
-4. Open a shell (CTRL + ALT + t) and type `shell`
-5. From the shell go to the location of the script on the removable media `cd /media/removable/` and press **[TAB] [TAB]** on your keyboard to show and auto-complete your removable media path automatically
-6. Run the script with `sudo bash main.sh`
-7. On the first run you will be asked how much storage space you want to dedicate to Ubuntu. We suggest choosing the default.
-8. After the first run, your system will reboot to complete the initial formatting, then you will need to re-run the script (steps 3-6) to complete the installation process
-9. Follow the prompt to complete the installation
-10. After the installation is completed and the Chromebook has rebooted, press CTRL+L to boot into Ubuntu
-11. On first boot you will be asked to complete your system configuration (Language, Time zone, Computer name) and create a user account
+### Copy the Installer to a USB Drive
+
+1. Download the [latest version of this installer](https://github.com/codestarterorg/ubuntu-chromebook-installer/archive/master.zip)
+   and extract it to your USB drive.
+
+### Enable Developer Mode
+
+1. Brand new Chromebooks need to be plugged in the first time they are used, so
+   go ahead an do that now. Then open up the laptop.
+1. As soon as you see the ChromeOS boot screen, hit **esc + refresh + power**
+   (all three buttons are on the top row of keys; refresh is the 4th button from
+   the left). Laptop will reboot.
+1. You will see a scary white screen. Hit **ctrl-d**.
+1. The text on the screen will change. Hit **enter**. Laptop will reboot.
+1. Hit **ctrl-d** again. It will now transition to developer mode, which takes
+   about a minute. When done, it will reboot.
+1. On boot, your laptop will now always show a scary white screen that says
+   "OS verification is OFF". Hit **ctrl + d** to boot to ChromeOS (or wait 30
+   seconds and it will boot to ChromeOS by default).
+
+Read more about
+[developer mode](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook).
+
+### Run the Codestarter Script (Stage One)
+
+1. Once ChromeOS boots, connect to your wireless network and select
+   **Continue**.
+1. Select **Accept and continue**.
+1. On the login screen, select **browse as Guest** in the right sidebar.
+1. Open a crosh shell by hitting **ctrl + alt + t**. A black browser window
+   should open.
+1. Type `shell` and hit **enter**. The prompt should turn green.
+1. Insert the Codestarter USB drive. A window should pop up with the contents.
+1. Switch back to the shell window.
+1. Go to the location of the script on the removable media by typing:
+   `cd /media/removable/`, then press **tab tab** on your keyboard to show and
+   auto-complete your removable media path automatically, then type
+   `ubuntu-chromebook-installer/`. In all, it should look something like this:
+   `cd /media/removable/USBDRIVE/ubuntu-chromebook-installer/`. Hit **enter**.
+1. Type `sudo bash main.sh` and hit **enter**.
+1. You will be asked how much storage space you want to dedicate to Ubuntu. We
+   suggest entering `10` if you don't plan to use ChromeOS much. Hit **enter**.
+1. The script will partition your drive and reboot after ten seconds.
+1. After reboot, you'll see a white screen with: "Your system is repairing
+   itself". This is normal, and should only last a few seconds. Then your laptop
+   will reboot again. Once it does, hit **ctrl + d** to boot to ChromeOS.
+
+### Run the Codestarter Script (Stage Two)
+
+NOTE: Most of this step will look the same as the previous, as we are just
+re-running the installation script. It knows how to finish the job.
+
+1. Once ChromeOS boots, connect to your wireless network and select
+   **Continue**.
+1. Select **Accept and continue**.
+1. On the login screen, select **browse as Guest** in the right sidebar.
+1. Open a crosh shell by hitting **ctrl + alt + t**. A black browser window
+   should open.
+1. Type `shell` and hit **enter**. The prompt should turn green.
+1. Go to the location of the script on the removable media by typing:
+   `cd /media/removable/`, then press **tab tab** on your keyboard to show and
+   auto-complete your removable media path automatically, then type
+   `ubuntu-chromebook-installer/`. In all, it should look something like this:
+   `cd /media/removable/USBDRIVE/ubuntu-chromebook-installer/`. Hit **enter**.
+1. Type `sudo bash main.sh` and hit **enter**.
+1. Now would be a good time to plug in your laptop, if it isn't already.
+1. The script will finish the installation, which may take up to an hour (or
+   more if you have a slow internet connection). It is fully automated, and you
+   can safely do other things while it installs. If your network drops out
+   during the installation, you will need to reboot your laptop and redo this
+   stage, except run `sudo bash main.sh -n` instead of the previously stated
+   command (this will skip the partition phase, as that has already been done).
+1. When the script finishes, it will ask you to hit [enter], so hit **enter**.
+
+### Use your new Codestarter laptop!
+
+1. When your laptop reboots, hit **ctrl + l** to boot into Linux. You can also
+   hit **ctrl + d** to boot into ChromeOS (or wait 30 seconds and it will boot
+   to ChromeOS by default).
+1. On your first boot to Linux you will be asked to complete your system
+   configuration (language, time zone, computer name) and create a user account.
+1. Congrats, you're done!
+1. BONUS: For a nicer experience, you can set up your machine to
+   [boot to Ubuntu by default](https://gist.github.com/mojombo/7c873f457df6abee5717).
+
+### Optional Stuff
+
+* If you are doing more than one installation, you can save a ton of time by
+  pre-downloading the Ubuntu installation files. Simply download
+  [ubuntu_system.tar.gz](https://s3-us-west-1.amazonaws.com/mojombo-codestarter/ubuntu_system.tar.gz)
+  and place it next to the Codestarter installation directory on your USB drive.
+  Now when you run the script, it will use this local file instead of trying to
+  download it every time!
 
 Credit(s)
 ---------
