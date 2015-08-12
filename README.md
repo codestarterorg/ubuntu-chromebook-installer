@@ -27,8 +27,8 @@ Prerequisites
 * An external media of at least 1GB (USB Flash drive or SD Card).
 * Patience.
 
-Usage
------
+Install
+-------
 
 **ATTENTION: This will wipe everything on your device**
 
@@ -69,8 +69,9 @@ Read more about
 1. Go to the location of the script on the removable media by typing:
    `cd /media/removable/`, then press **tab tab** on your keyboard to show and
    auto-complete your removable media path automatically, then type
-   `ubuntu-chromebook-installer/`. In all, it should look something like this:
-   `cd /media/removable/USBDRIVE/ubuntu-chromebook-installer/`. Hit **enter**.
+   `ubuntu-chromebook-installer-master/`. In all, it should look something like
+   this: `cd /media/removable/USBDRIVE/ubuntu-chromebook-installer-master/`. Hit
+   **enter**.
 1. Type `sudo bash main.sh` and hit **enter**.
 1. You will be asked how much storage space you want to dedicate to Ubuntu. We
    suggest entering `10` if you don't plan to use ChromeOS much. Hit **enter**.
@@ -100,11 +101,11 @@ re-running the installation script. It knows how to finish the job.
 1. Now would be a good time to plug in your laptop, if it isn't already.
 1. The script will finish the installation, which may take up to an hour (or
    more if you have a slow internet connection). It is fully automated, and you
-   can safely do other things while it installs. If your network drops out
-   during the installation, you will need to reboot your laptop and redo this
-   stage, except run `sudo bash main.sh -n` instead of the previously stated
-   command (this will skip the partition phase, as that has already been done).
-1. When the script finishes, it will ask you to hit [enter], so hit **enter**.
+   can safely step away while it installs. If your network drops out during the
+   installation, you will need to reboot your laptop and redo this stage, except
+   run `sudo bash main.sh -n` instead of the previously stated command (this will
+   skip the partition phase, as that has already been done).
+1. When the script finishes, it will ask you to hit [ENTER], so hit **enter**.
 
 ### Use your new Codestarter laptop!
 
@@ -125,6 +126,50 @@ re-running the installation script. It knows how to finish the job.
   and place it next to the Codestarter installation directory on your USB drive.
   Now when you run the script, it will use this local file instead of trying to
   download it every time!
+
+Reinstall
+---------
+
+If you need to reinstall Ubuntu on your Codestarter laptop, these instructions
+will get you there.
+
+**ATTENTION: This will wipe everything on your device**
+
+### Copy the Installer to a USB Drive
+
+1. Download the [latest version of this installer](https://github.com/codestarterorg/ubuntu-chromebook-installer/archive/master.zip)
+   and extract it to your USB drive (with at least 1GB of free space).
+
+### Run the Codestarter Script
+
+1. Reboot your laptop and as soon as you see the white screen, hit **ctrl + d**.
+1. Once ChromeOS boots, login and make sure you're connected to the internet.
+   It's ok to select **browse as Guest** in the right sidebar if you don't
+   want to login with your Google account.
+1. Open a crosh shell by hitting **ctrl + alt + t**. A black browser window
+  should open.
+1. Type `shell` and hit **enter**. The prompt should turn green.
+1. Go to the location of the script on the removable media by typing:
+   `cd /media/removable/`, then press **tab tab** on your keyboard to show and
+   auto-complete your removable media path automatically, then type
+   `ubuntu-chromebook-installer-master/`. In all, it should look something like
+   this: `cd /media/removable/USBDRIVE/ubuntu-chromebook-installer-master/`. Hit
+   **enter**.
+1. Now would be a good time to plug in your laptop, if it isn't already.
+1. You may be asked to confirm that you want to write to an existing partition.
+   If so, answer **yes**.
+1. The script will finish the installation, which may take up to an hour (or
+  more if you have a slow internet connection). It is fully automated, and you
+  can safely step away while it installs. If your network drops out during the
+  installation, you will need to reboot your laptop and redo the reinstallation.
+1. When the script finishes, it will ask you to hit [ENTER], so hit **enter**.
+
+### Use your new Codestarter laptop!
+
+1. When your laptop reboots, hit **ctrl + l** to boot into Linux.
+1. On your first boot to Linux you will be asked to complete your system
+  configuration (language, time zone, computer name) and create a user account.
+1. Congrats, you're done!
 
 Credit(s)
 ---------
