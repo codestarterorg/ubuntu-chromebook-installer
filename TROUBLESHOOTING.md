@@ -23,8 +23,9 @@ nameserver 208.67.220.123
 
 If you don't see that, then you can fix the problem by correcting that file:
 
-1. In the terminal window type `sudo echo -e "nameserver 208.67.222.123\nnameserver 208.67.220.123" > /etc/resolv.conf`
-1. Triple check that you entered it EXACTLY as above. Then hit **enter**.
+1. Make sure you're in a terminal window (hit **ctrl + alt + t** to open one).
+1. Type `sudo echo -e "nameserver 208.67.222.123\nnameserver 208.67.220.123" > /etc/resolv.conf`
+1. Triple check that you entered it, all on one line, EXACTLY as above. Then hit **enter**.
 1. At the prompt, enter your password.
 1. Reboot your computer.
 
