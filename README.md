@@ -95,8 +95,8 @@ re-running the installation script. It knows how to finish the job.
 1. Go to the location of the script on the removable media by typing:
    `cd /media/removable/`, then press **tab tab** on your keyboard to show and
    auto-complete your removable media path automatically, then type
-   `ubuntu-chromebook-installer/`. In all, it should look something like this:
-   `cd /media/removable/USBDRIVE/ubuntu-chromebook-installer/`. Hit **enter**.
+   `ubuntu-chromebook-installer-master/`. In all, it should look something like this:
+   `cd /media/removable/USBDRIVE/ubuntu-chromebook-installer-master/`. Hit **enter**.
 1. Type `sudo bash main.sh` and hit **enter**.
 1. Now would be a good time to plug in your laptop, if it isn't already.
 1. The script will finish the installation, which may take up to an hour (or
