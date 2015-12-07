@@ -171,6 +171,15 @@ will get you there.
   configuration (language, time zone, computer name) and create a user account.
 1. Congrats, you're done!
 
+### If by chance you hit the space bar on the OS verification screen
+
+1. Don't panic, you have reverted only your Chrome OS. The linux partition is still intact!
+1. Re-enable developer mode as before (instructions above)
+1. Reboot and instead of logging on with your password instead press **ctl + alt + ->**  (the forward button)
+1. logon as chronos
+1. type the following to re-enable linux boot **sudo crossystem dev_boot_usb=1 dev_boot_legacy=1** press enter
+1. type **sudo reboot**   (you should now be able to press **ctrl + l** to boot into Linux.)
+
 Credit(s)
 ---------
 
