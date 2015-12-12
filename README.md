@@ -127,8 +127,9 @@ re-running the installation script. It knows how to finish the job.
   Now when you run the script, it will use this local file instead of trying to
   download it every time!
 * Replace OpenDNS. For example, to use Google DNS, edit `/etc/resolv.conf`:
-    nameserver 8.8.8.8
-    nameserver 8.8.4.4 
+
+        nameserver 8.8.8.8
+        nameserver 8.8.4.4 
 
 Reinstall
 ---------
