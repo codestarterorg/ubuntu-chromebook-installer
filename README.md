@@ -131,6 +131,13 @@ re-running the installation script. It knows how to finish the job.
         nameserver 8.8.8.8
         nameserver 8.8.4.4 
 
+* If the microphone doesn't work, you may need to install and run pavucontrol:
+
+        $ sudo apt install pavucontrol
+        $ pavucontrol
+
+Under the Input Devices tab, change Port to "Microphone (unplugged)".
+
 Reinstall
 ---------
 
